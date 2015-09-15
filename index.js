@@ -2,6 +2,7 @@ global.env = process.env.NODE_ENV || 'development';
 
 var express = require('express');
 var app = express();
+var url = require('url');
 var redisConfig = {
   host: 'localhost',
   port: 6379,
@@ -9,8 +10,11 @@ var redisConfig = {
 };
 
 if (env === 'production') {
+  var redisURL = url.parse(process.env.REDIS_URL);
   redisConfig = {
-
+    port: redisURL.port,
+    host: redisURL.hostname,
+    password: redisURL.auth.split(":")[1]
   };
 }
 
