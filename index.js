@@ -16,6 +16,7 @@ if (env === 'production') {
     host: redisURL.hostname,
     password: redisURL.auth.split(":")[1]
   };
+  app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN));
 }
 
 app.set('port', (process.env.PORT || 5000));

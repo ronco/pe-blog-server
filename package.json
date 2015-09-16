@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "express": "4.13.3",
-    "node-ember-cli-deploy-redis": "^0.2.0"
+    "node-ember-cli-deploy-redis": "^0.2.0",
+    "prerender-node": "^2.0.2"
   },
   "engines": {
     "node": "0.12.7"
